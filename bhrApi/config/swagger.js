@@ -1,6 +1,7 @@
 const swaggerJSDoc = require('swagger-jsdoc');
 const swaggerUi = require('swagger-ui-express');
 
+const PORT = process.env.PORT || 3000;
 // การตั้งค่าทั่วไปของ OpenAPI
 const options = {
   definition: {
@@ -12,7 +13,7 @@ const options = {
     },
     servers: [
       {
-        url: 'http://localhost:3000',
+        url: `http://localhost:${PORT}`, // เปลี่ยน {PORT} เป็นพอร์ตที่คุณใช้งานจริง
         description: 'Development Server',
       },
     ],
